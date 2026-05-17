@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject _light;
+
     public Vector2 LastNonZeroDirection => _lastNonZeroDirection;
 
     private float Speed => Settings.Instance.PlayerSpeed;
@@ -21,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         UpdateKeyboardInput();
+        RotateLight();
     }
 
     private void FixedUpdate()
@@ -39,5 +42,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (_movement != Vector2.zero)
             _lastNonZeroDirection = _movement;
+    }
+
+    private void RotateLight()
+    {
+        if (_light)
+        {
+            if (_lastNonZeroDirection == Vector2.zero)
+                return;
+
+            float angle = Mathf.Atan2(_lastNonZeroDirection.y, _lastNonZeroDirection.x) * Mathf.Rad2Deg;
+
+            _light.transform.rotation = Quaternion.Euler(0, 0, angle + 90f);
+        }
     }
 }
