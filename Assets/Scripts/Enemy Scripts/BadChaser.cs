@@ -1,8 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using System.Collections;
 
-public class GoodPickup : MonoBehaviour
+public class BadChaser : MonoBehaviour
 {
     public float Life = 5;
     private bool Enlighted = false;
@@ -35,6 +34,6 @@ public class GoodPickup : MonoBehaviour
 
     private void DeathAction()
     {
-        gameObject.GetComponent<Renderer>().material.color = Color.green;
+        Destroy(gameObject);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject _light;
+    public float _sanityWiggle;
 
     public Vector2 LastNonZeroDirection => _lastNonZeroDirection;
 
@@ -44,16 +45,23 @@ public class PlayerMovement : MonoBehaviour
             _lastNonZeroDirection = _movement;
     }
 
+    private float _SanityFlag = 0f;
+    private float _SanityPivot = 1f; //No es pivot pero no me sale la palabra
     private void RotateLight()
     {
         if (_light)
         {
+            float anglePivot = 90f; //No es pivot pero no me sale la palabra
+
             if (_lastNonZeroDirection == Vector2.zero)
                 return;
 
             float angle = Mathf.Atan2(_lastNonZeroDirection.y, _lastNonZeroDirection.x) * Mathf.Rad2Deg;
-
-            _light.transform.rotation = Quaternion.Euler(0, 0, angle + 90f);
+            if (_SanityFlag <= 0) _SanityPivot = UnityEngine.Random.Range(-1, 2);
+            anglePivot += _sanityWiggle * _SanityPivot;
+            _light.transform.rotation = Quaternion.Euler(0, 0, angle + anglePivot);
+            if (_SanityFlag > 0) _SanityFlag -= 1;
+            else _SanityFlag = 50;
         }
     }
 }
