@@ -13,6 +13,8 @@ public class Settings : ScriptableObject
 
     [Tooltip("Defines the life of the player")]
     public int PlayerLife;
+    [Tooltip("Defines the maximum life of the player")]
+    public int PlayerMaxLife;
     [Tooltip("Defines the speed of the player")]
     public float PlayerSpeed;    
     [Tooltip("Defines the falling speed of the spawns")]

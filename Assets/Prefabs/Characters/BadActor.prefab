@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 205384048962897783}
   - component: {fileID: 6523220511315125263}
   - component: {fileID: 1671223312318267793}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BadActor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
