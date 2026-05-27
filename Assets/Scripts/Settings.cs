@@ -6,11 +6,6 @@ public class Settings : ScriptableObject
     
     static public Settings Instance;
 
-    public Settings()
-    {
-        Instance = this;
-    }
-
     [Tooltip("Defines the life of the player")]
     public int PlayerLife;
     [Tooltip("Defines the maximum life of the player")]
@@ -19,4 +14,9 @@ public class Settings : ScriptableObject
     public float PlayerSpeed;    
     [Tooltip("Defines the falling speed of the spawns")]
     public float fallingSpeed;
+
+    private void OnEnable()
+    {
+        Instance = this;
+    }
 }

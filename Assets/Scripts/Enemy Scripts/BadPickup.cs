@@ -12,13 +12,6 @@ public class BadPickup : MonoBehaviour
             if (Life > 0) Enlighted = true;
             else DeathAction();
         }
-        else
-        {
-            Debug.Log("collision with " + other.name);
-            Settings.Instance.PlayerLife += 1;
-            Debug.Log("Player life " + Settings.Instance.PlayerLife);
-            Destroy(gameObject);
-        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
