@@ -6,6 +6,8 @@ public class GoodPickup : MonoBehaviour
 {
     public float Life = 5;
     private bool Enlighted = false;
+    public bool IsSurvivour = true;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.name == "Luz")
@@ -16,7 +18,7 @@ public class GoodPickup : MonoBehaviour
         else
         {
             Settings.Instance.PlayerLife += 1;
-            Settings.Instance.SurvivoursLeft += 1;
+            if (IsSurvivour) Settings.Instance.SurvivoursLeft += 1;
             Destroy(gameObject);
         }
     }
