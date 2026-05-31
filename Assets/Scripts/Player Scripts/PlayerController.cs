@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (_movement != Vector2.zero)
             _lastNonZeroDirection = _movement;
+
         animator.SetBool("forwardWalk", _movement.y > 0);
         animator.SetBool("backWalk", _movement.y < 0);
         animator.SetBool("rightWalk", _movement.x > 0);
@@ -57,10 +58,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            if (_nearbyNpc != null)
-            {
-                _nearbyNpc.Interact();
-            }
+            _nearbyNpc?.Interact();
         }
     }
 

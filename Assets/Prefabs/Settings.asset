@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2376b7e471035440bb590675535acd3, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: Assembly-CSharp::Settings
-  PlayerLife: 9
+  PlayerLife: 5
   PlayerMaxLife: 10
   PlayerSpeed: 6
-  fallingSpeed: 2
+  SurvivoursLeft: 2
+  survivoursOnScenes: 3
