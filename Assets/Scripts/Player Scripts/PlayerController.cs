@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float Speed => Settings.Instance.PlayerSpeed;
 
     private Vector2 _lastNonZeroDirection;
+    private InteractableNpc _nearbyNpc;
     private Rigidbody2D _rigidBody;
 
     private Vector2 _movement;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         fieldOfView.SetOrigin(transform.position);
         UpdateKeyboardInput();
         RotateLight();
+        HandleInteraction();
     }
 
     private void FixedUpdate()
@@ -44,6 +46,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (_movement != Vector2.zero)
             _lastNonZeroDirection = _movement;
+    }
+
+    private void HandleInteraction()
+    {
+        if (Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            if (_nearbyNpc != null)
+            {
+                _nearbyNpc.Interact();
+            }
+        }
     }
 
     private float _SanityFlag = 0f;
@@ -91,5 +104,25 @@ public class PlayerMovement : MonoBehaviour
         float maxAngle = 180f;
 
         return insanity * maxAngle;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        InteractableNpc npc = other.GetComponent<InteractableNpc>();
+
+        if (npc != null)
+        {
+            _nearbyNpc = npc;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        InteractableNpc npc = other.GetComponent<InteractableNpc>();
+
+        if (npc != null && npc == _nearbyNpc)
+        {
+            _nearbyNpc = null;
+        }
     }
 }
