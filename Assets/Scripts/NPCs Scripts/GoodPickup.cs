@@ -16,6 +16,7 @@ public class GoodPickup : MonoBehaviour
         else
         {
             Settings.Instance.PlayerLife += 1;
+            Settings.Instance.SurvivoursLeft += 1;
             Destroy(gameObject);
         }
     }
