@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a375386d8a44484d87d453a8cc94b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  dialogueText: {fileID: 0}
+  dialogueText: {fileID: 1437160532}
   visibleTime: 3
 --- !u!1 &321031239
 GameObject:
@@ -10813,6 +10813,10 @@ PrefabInstance:
     - target: {fileID: 1738335594687170125, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
       propertyPath: m_Name
       value: PassiveEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606402695868852711, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
+      propertyPath: m_Radius
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 9047168378608701349, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
       propertyPath: m_LocalPosition.x
