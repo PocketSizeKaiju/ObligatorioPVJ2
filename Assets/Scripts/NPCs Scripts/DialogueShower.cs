@@ -1,16 +1,38 @@
 using UnityEngine;
+using TMPro;
+using System.Collections;
 
 public class DialogueShower : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private float visibleTime = 3f;
+
+    private Coroutine _hideCoroutine;
+
+    public void ShowDialogue(string text)
     {
-        
+        dialogueText.text = text;
+        dialogueText.enabled = true;
+
+        if (_hideCoroutine != null)
+        {
+            StopCoroutine(_hideCoroutine);
+        }
+
+        _hideCoroutine = StartCoroutine(HideAfterDelay());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator HideAfterDelay()
     {
-        
+        yield return new WaitForSeconds(visibleTime);
+
+        HideDialogue();
+    }
+
+    public void HideDialogue()
+    {
+        dialogueText.text = "";
+        dialogueText.enabled = false;
+        _hideCoroutine = null;
     }
 }
