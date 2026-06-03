@@ -189,10 +189,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6835033766566395676, guid: 2d099010bf192d545a922248abd23319, type: 3}
-      propertyPath: chaseRange
-      value: 3.5
-      objectReference: {fileID: 0}
     - target: {fileID: 361829382198987463, guid: 2d099010bf192d545a922248abd23319, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.15
@@ -233,33 +229,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2607837876852145394, guid: 2d099010bf192d545a922248abd23319, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183707381337949037, guid: 2d099010bf192d545a922248abd23319, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6061968539530721144, guid: 2d099010bf192d545a922248abd23319, type: 3}
       propertyPath: m_Name
       value: Bad
       objectReference: {fileID: 0}
-    - target: {fileID: 6061968539530721144, guid: 2d099010bf192d545a922248abd23319, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6061968539530721144, guid: 2d099010bf192d545a922248abd23319, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 919094342}
-    - targetCorrespondingSourceObject: {fileID: 6061968539530721144, guid: 2d099010bf192d545a922248abd23319, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 919094335}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d099010bf192d545a922248abd23319, type: 3}
 --- !u!1 &111415146
 GameObject:
@@ -431,6 +408,10 @@ PrefabInstance:
       propertyPath: dialogueText
       value: Sigueme
       objectReference: {fileID: 0}
+    - target: {fileID: 6113492825369308381, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
+      propertyPath: activeEnemyPrefab
+      value: 
+      objectReference: {fileID: 6061968539530721144, guid: 2d099010bf192d545a922248abd23319, type: 3}
     - target: {fileID: 9047168378608701349, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.55
@@ -1166,74 +1147,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 241896632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &919094330 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6061968539530721144, guid: 2d099010bf192d545a922248abd23319, type: 3}
-  m_PrefabInstance: {fileID: 106230702}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &919094335
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919094330}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &919094342
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919094330}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
 --- !u!1 &994791671
 GameObject:
   m_ObjectHideFlags: 0
