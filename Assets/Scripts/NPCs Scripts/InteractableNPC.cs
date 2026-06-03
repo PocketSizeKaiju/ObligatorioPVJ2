@@ -1,23 +1,28 @@
 using UnityEngine;
 
-public class InteractableNpc : MonoBehaviour
+public class InteractableNPC : MonoBehaviour
 {
-    [SerializeField] private string dialogueText = "Diálogo ejemplo";
+    [SerializeField] private string dialogueText = "Sígueme, conozco la salida.";
 
     private DialogueShower _dialogueShower;
+    private PassiveEnemyMovement _movement;
 
     private void Awake()
     {
         _dialogueShower = FindFirstObjectByType<DialogueShower>();
+        _movement = GetComponent<PassiveEnemyMovement>();
     }
 
     public void Interact()
     {
-        if (_dialogueShower == null)
+        if (_dialogueShower != null)
         {
-            return;
+            _dialogueShower.ShowDialogue(dialogueText);
         }
 
-        _dialogueShower.ShowDialogue(dialogueText);
+        if (_movement != null)
+        {
+            _movement.StartMoving();
+        }
     }
 }
