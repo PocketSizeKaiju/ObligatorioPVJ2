@@ -400,8 +400,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2514519974281558685, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 792188147}
+    - target: {fileID: -2514519974281558685, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
       propertyPath: waypoints.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2514519974281558685, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
+      propertyPath: maxDistanceFromPlayer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -2514519974281558685, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
       propertyPath: 'waypoints.Array.data[0]'
@@ -418,6 +426,10 @@ PrefabInstance:
     - target: {fileID: 1738335594687170125, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
       propertyPath: m_Name
       value: PassiveEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113492825369308381, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
+      propertyPath: dialogueText
+      value: Sigueme
       objectReference: {fileID: 0}
     - target: {fileID: 9047168378608701349, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
       propertyPath: m_LocalPosition.x

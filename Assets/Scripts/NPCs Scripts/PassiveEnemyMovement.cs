@@ -1,25 +1,31 @@
-using System.Collections;
 using UnityEngine;
 
 public class PassiveEnemyMovement : MonoBehaviour
 {
+    [SerializeField] private Transform player;
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float speed = 2f;
     [SerializeField] private float reachDistance = 0.1f;
-    [SerializeField] private float waitTimeAtWaypoint = 1.5f;
+    [SerializeField] private float maxDistanceFromPlayer = 3f;
 
     private int _currentWaypointIndex;
     private bool _isMoving;
-    private bool _isWaiting;
 
     private void Update()
     {
-        if (!_isMoving || _isWaiting)
+        if (!_isMoving)
         {
             return;
         }
 
-        if (waypoints == null || waypoints.Length == 0)
+        if (player == null || waypoints == null || waypoints.Length == 0)
+        {
+            return;
+        }
+
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if (distanceToPlayer > maxDistanceFromPlayer)
         {
             return;
         }
@@ -34,30 +40,18 @@ public class PassiveEnemyMovement : MonoBehaviour
 
         if (Vector2.Distance(transform.position, target.position) <= reachDistance)
         {
-            StartCoroutine(GoToNextWaypointAfterDelay());
+            _currentWaypointIndex++;
+
+            if (_currentWaypointIndex >= waypoints.Length)
+            {
+                _isMoving = false;
+                enabled = false;
+            }
         }
     }
 
     public void StartMoving()
     {
         _isMoving = true;
-    }
-
-    private IEnumerator GoToNextWaypointAfterDelay()
-    {
-        _isWaiting = true;
-
-        yield return new WaitForSeconds(waitTimeAtWaypoint);
-
-        _currentWaypointIndex++;
-
-        if (_currentWaypointIndex >= waypoints.Length)
-        {
-            _isMoving = false;
-            enabled = false;
-            yield break;
-        }
-
-        _isWaiting = false;
     }
 }
