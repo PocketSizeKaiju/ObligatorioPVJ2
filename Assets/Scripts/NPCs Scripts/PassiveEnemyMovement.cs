@@ -10,6 +10,9 @@ public class PassiveEnemyMovement : MonoBehaviour
 
     private int _currentWaypointIndex;
     private bool _isMoving;
+    private bool _hasReachedFinalWaypoint;
+
+    public bool HasReachedFinalWaypoint => _hasReachedFinalWaypoint;
 
     private void Update()
     {
@@ -45,7 +48,7 @@ public class PassiveEnemyMovement : MonoBehaviour
             if (_currentWaypointIndex >= waypoints.Length)
             {
                 _isMoving = false;
-                enabled = false;
+                _hasReachedFinalWaypoint = true;
             }
         }
     }
