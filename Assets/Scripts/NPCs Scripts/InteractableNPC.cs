@@ -5,6 +5,7 @@ public class InteractableNPC : MonoBehaviour
     [SerializeField] private string firstDialogueText = "Sígueme, conozco la salida.";
     [SerializeField] private string movingDialogueText = "No te quedes atrás...";
     [SerializeField] private string finalDialogueText = "Llegamos... demasiado tarde para ti.";
+    [SerializeField] private GameObject activeEnemyPrefab;
 
     private DialogueShower _dialogueShower;
     private PassiveEnemyMovement _movement;
@@ -21,6 +22,7 @@ public class InteractableNPC : MonoBehaviour
         if (_movement != null && _movement.HasReachedFinalWaypoint)
         {
             ShowDialogue(finalDialogueText);
+            TransformIntoActiveEnemy();
             return;
         }
 
@@ -41,5 +43,15 @@ public class InteractableNPC : MonoBehaviour
         {
             _dialogueShower.ShowDialogue(text);
         }
+    }
+
+    private void TransformIntoActiveEnemy()
+    {
+        if (activeEnemyPrefab != null)
+        {
+            Instantiate(activeEnemyPrefab, transform.position, transform.rotation);
+        }
+
+        Destroy(gameObject);
     }
 }
