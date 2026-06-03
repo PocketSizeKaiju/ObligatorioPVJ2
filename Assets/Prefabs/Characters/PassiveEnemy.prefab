@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3467742791521472658}
   - component: {fileID: 4606402695868852711}
   - component: {fileID: 6113492825369308381}
+  - component: {fileID: -2514519974281558685}
   m_Layer: 0
   m_Name: PassiveEnemy
   m_TagString: Untagged
@@ -142,3 +143,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableNpc
   dialogueText: Dialogo ejemplo
+--- !u!114 &-2514519974281558685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738335594687170125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00a682eba1cbb146a83a7b4e1f34ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PassiveEnemyMovement
+  waypoints: []
+  speed: 2
+  reachDistance: 0.1
