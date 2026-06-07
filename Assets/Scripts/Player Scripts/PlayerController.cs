@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float Speed => Settings.Instance.PlayerSpeed;
 
     private Vector2 _lastNonZeroDirection;
-    private InteractableNpc _nearbyNpc;
+    private InteractableNPC _nearbyNpc;
     private Rigidbody2D _rigidBody;
 
     private Vector2 _movement;
@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        InteractableNpc npc = other.GetComponent<InteractableNpc>();
+        InteractableNPC npc = other.GetComponent<InteractableNPC>();
 
         if (npc != null)
         {
@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        InteractableNpc npc = other.GetComponent<InteractableNpc>();
+        InteractableNPC npc = other.GetComponent<InteractableNPC>();
 
         if (npc != null && npc == _nearbyNpc)
         {
