@@ -17,10 +17,17 @@ public class pickPowerup : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         pickedUp = other.name == "Player";
-        scale = Luz.transform.localScale;
-        originalScale = Luz.transform.localScale;
+        if(pickedUp) {
+            scale = Luz.transform.localScale;
+            originalScale = Luz.transform.localScale;
 
-        GetComponent<Renderer>().enabled = false;
+            GetComponent<Renderer>().enabled = false;
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        pickedUp = false;
     }
 
     private void LateUpdate()

@@ -15,7 +15,6 @@ public class LightsScript : MonoBehaviour
         if (delta > 5 && Keyboard.current.ctrlKey.IsPressed())
         {
             Settings.Instance.PlayerLife -= 1;
-            Debug.Log("Player life " + Settings.Instance.PlayerLife);
             delta = 0;
         }
         else if (!Keyboard.current.ctrlKey.IsPressed())

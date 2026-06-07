@@ -103,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
         int maxLife = Settings.Instance.PlayerMaxLife;
 
         float lifePercent = (float)currentLife / maxLife;
-        Debug.Log(lifePercent);
         float insanity = (lifePercent < 0.8) ? 1f - lifePercent : 0f;
         float maxAngle = 160f;
 

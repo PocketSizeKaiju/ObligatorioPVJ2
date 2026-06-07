@@ -15,7 +15,7 @@ public class GoodPickup : MonoBehaviour
             if (Life > 0) Enlighted = true;
             else DeathAction();
         }
-        else
+        else if(other.name == "Player")
         {
             Settings.Instance.PlayerLife += 1;
             if (IsSurvivour) Settings.Instance.SurvivoursLeft += 1;
