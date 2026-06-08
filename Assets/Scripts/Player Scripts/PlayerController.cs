@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private FieldOfView fieldOfView;
+    [SerializeField] private Animator animator;
     public GameObject _light;
     public Vector2 LastNonZeroDirection => _lastNonZeroDirection;
 
@@ -46,16 +47,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (_movement != Vector2.zero)
             _lastNonZeroDirection = _movement;
+
+        animator.SetBool("forwardWalk", _movement.y > 0);
+        animator.SetBool("backWalk", _movement.y < 0);
+        animator.SetBool("rightWalk", _movement.x > 0);
+        animator.SetBool("leftWalk", _movement.x < 0);
     }
 
     private void HandleInteraction()
     {
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            if (_nearbyNpc != null)
-            {
-                _nearbyNpc.Interact();
-            }
+            _nearbyNpc?.Interact();
         }
     }
 
@@ -100,8 +103,8 @@ public class PlayerMovement : MonoBehaviour
         int maxLife = Settings.Instance.PlayerMaxLife;
 
         float lifePercent = (float)currentLife / maxLife;
-        float insanity = 1f - lifePercent;
-        float maxAngle = 180f;
+        float insanity = (lifePercent < 0.8) ? 1f - lifePercent : 0f;
+        float maxAngle = 160f;
 
         return insanity * maxAngle;
     }

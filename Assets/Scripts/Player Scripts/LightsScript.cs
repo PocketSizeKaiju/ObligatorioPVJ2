@@ -12,12 +12,12 @@ public class LightsScript : MonoBehaviour
         GetComponent<Renderer>().enabled = Keyboard.current.ctrlKey.IsPressed();
 
         delta += Time.deltaTime;
-        if (delta > 2 && Keyboard.current.ctrlKey.IsPressed())
+        if (delta > 5 && Keyboard.current.ctrlKey.IsPressed())
         {
             Settings.Instance.PlayerLife -= 1;
-            Debug.Log("Player life " + Settings.Instance.PlayerLife);
             delta = 0;
-        } else if(!Keyboard.current.ctrlKey.IsPressed())
+        }
+        else if (!Keyboard.current.ctrlKey.IsPressed())
         {
             delta = 0;
         }
