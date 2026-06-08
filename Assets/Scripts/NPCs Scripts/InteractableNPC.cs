@@ -7,6 +7,8 @@ public class InteractableNPC : MonoBehaviour
     [SerializeField] private string finalDialogueText = "Llegamos... demasiado tarde para ti.";
     [SerializeField] private GameObject activeEnemyPrefab;
 
+    [SerializeField] private bool isNotEnemy;
+
     private DialogueShower _dialogueShower;
     private PassiveEnemyMovement _movement;
     private bool _hasStartedMoving;
@@ -50,6 +52,10 @@ public class InteractableNPC : MonoBehaviour
         if (activeEnemyPrefab != null)
         {
             Instantiate(activeEnemyPrefab, transform.position, transform.rotation);
+        }
+        else if (isNotEnemy)
+        {
+            Settings.Instance.SurvivoursLeft += 1;
         }
 
         Destroy(gameObject);

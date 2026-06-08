@@ -8,11 +8,6 @@ public class CluePopup : MonoBehaviour
 
     private bool isActive = false;
 
-    void Start()
-    {
-        _gameObject.SetActive(false);
-    }
-
     void Update()
     {
         if (isActive && Keyboard.current.eKey.wasPressedThisFrame)
@@ -23,13 +18,22 @@ public class CluePopup : MonoBehaviour
             Time.timeScale = _gameObject.activeSelf ? 0f : 1f;
         }
     }
-    public void activateNote(){
-        Debug.Log("activado" + isActive);
+    public void activateNote()
+    {
         isActive = true;
+        Debug.Log("activado" + isActive);
     }
 
-    public void deactivateNote(){
-        Debug.Log("desactivado" + isActive);
+    public void deactivateNote()
+    {
         isActive = false;
+        Debug.Log("desactivado" + isActive);
+    }
+
+    public void ShowNote()
+    {
+        isActive = true;
+        _gameObject.SetActive(true);
+        Time.timeScale = 0f;
     }
 }

@@ -11,15 +11,20 @@ public class doorOpening : MonoBehaviour
      private void OnTriggerEnter2D(Collider2D other) {
         if (other.name == "Player") {
             playerNearby = true;
-        } else if(other == doorOpener) {
+        }
+        else if (other.gameObject == doorOpener)
+        {
             isOpen = true;
+            Destroy(gameObject);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.name == "Player") {
             playerNearby = false;
-        } else if(other == doorOpener) {
+        }
+        else if (other.gameObject == doorOpener)
+        {
             isOpen = false;
         }
     }
