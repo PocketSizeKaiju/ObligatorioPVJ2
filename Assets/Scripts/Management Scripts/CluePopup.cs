@@ -7,15 +7,15 @@ public class CluePopup : MonoBehaviour
     public GameObject _gameObject;
 
     private bool isActive = false;
+    private bool showOnce = false;
 
     void Update()
     {
-        if (isActive && Keyboard.current.eKey.wasPressedThisFrame)
+        if ((isActive || showOnce) && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            Debug.Log(_gameObject.activeSelf);
             _gameObject.SetActive(!_gameObject.activeSelf);
-            Debug.Log(_gameObject.activeSelf);
             Time.timeScale = _gameObject.activeSelf ? 0f : 1f;
+            showOnce = false;
         }
     }
     public void activateNote()
@@ -32,7 +32,7 @@ public class CluePopup : MonoBehaviour
 
     public void ShowNote()
     {
-        isActive = true;
+        showOnce = true;
         _gameObject.SetActive(true);
         Time.timeScale = 0f;
     }
