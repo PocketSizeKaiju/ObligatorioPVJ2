@@ -4,11 +4,22 @@ using UnityEngine;
 public class Settings : ScriptableObject
 {
 
-    static public Settings Instance;
+    private static Settings _instance;
 
-    public Settings()
+    public static Settings Instance
     {
-        Instance = this;
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = Resources.Load<Settings>("Settings");
+                if (_instance == null)
+                {
+                    Debug.LogError("FATAL: No se encontró el asset 'Settings' en una carpeta Resources.");
+                }
+            }
+            return _instance;
+        }
     }
 
     [Tooltip("Defines the life of the player")]
