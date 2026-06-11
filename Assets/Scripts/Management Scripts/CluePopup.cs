@@ -36,4 +36,10 @@ public class CluePopup : MonoBehaviour
         _gameObject.SetActive(true);
         Time.timeScale = 0f;
     }
+
+    public void HideNote()
+    {
+        _gameObject.SetActive(false);
+        Time.timeScale = 1f;
+    }
 }

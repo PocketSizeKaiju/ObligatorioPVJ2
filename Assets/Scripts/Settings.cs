@@ -31,8 +31,6 @@ public class Settings : ScriptableObject
 
     [Tooltip("How many good people the player has found")]
     public int SurvivoursLeft;
-    [Tooltip("How many good people are on the floor")]
-    public int SurvivoursInLevel;
     [Tooltip("How many good people are on the current scene")]
     public int survivoursOnScenes;
 }

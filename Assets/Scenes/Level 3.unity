@@ -19096,7 +19096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1783126781273667860, guid: 4b95b117ec81d654d9d01176207996ce, type: 3}
       propertyPath: nextLevel
-      value: Level 2
+      value: InitialScene
       objectReference: {fileID: 0}
     - target: {fileID: 6311090674012743266, guid: 4b95b117ec81d654d9d01176207996ce, type: 3}
       propertyPath: m_Name
@@ -19353,6 +19353,14 @@ PrefabInstance:
       propertyPath: noteManager
       value: 
       objectReference: {fileID: 376975339}
+    - target: {fileID: 2876994341039843212, guid: f4107441329a2174da2d4ec4e8e79f10, type: 3}
+      propertyPath: showNoteMsg
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876994341039843212, guid: f4107441329a2174da2d4ec4e8e79f10, type: 3}
+      propertyPath: witnessesInLevel
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4458321516921020908, guid: f4107441329a2174da2d4ec4e8e79f10, type: 3}
       propertyPath: m_Name
       value: FirstLevelNote
