@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8738282245514498120}
   - component: {fileID: 3230424273498389123}
   - component: {fileID: 205384048962897783}
-  - component: {fileID: 6523220511315125263}
   - component: {fileID: 1671223312318267793}
   m_Layer: 3
   m_Name: BadActor
@@ -130,18 +129,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &6523220511315125263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6966296440490270253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9751501e0b91944daaf1648322a4d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FallingScript
 --- !u!114 &1671223312318267793
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4458321516921020908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 979649346455256558}
+  - component: {fileID: 2876994341039843212}
+  m_Layer: 0
+  m_Name: FirstLevelNote
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &979649346455256558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458321516921020908}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 383.12274, y: 105.48553, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2876994341039843212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458321516921020908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc87f76f9588b2448d798d1ff188640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FirstLevelNote
+  noteText: {fileID: 0}
+  noteManager: {fileID: 0}
+  text: "SI EST\xC1S LEYENDO ESTO, TODAV\xCDA NO ES TARDE.  \r\n\r\n\r\nLas personas
+    no siempre son personas. \r\nTu linterna es lo \xFAnico que te mantiene con vida.
+    La luz ilumina el camino, protege tu mente y aleja a las entidades.  \r\nSi la
+    bater\xEDa se agota, se acab\xF3.  \r\nHabl\xE1 con quienes encuentres. \r\nObserv\xE1
+    c\xF3mo act\xFAan. \r\nHay cosas aqu\xED que intentan parecer humanas, pero siempre
+    cometen errores.  Dejar\xE9 m\xE1s notas para ayudarte.  \r\n\r\nWASD: Moverse
+    Linterna E: Interactuar P: Pausa  \r\n\r\nEncontr\xE1 sobrevivientes. \r\nConserv\xE1
+    la bater\xEDa.  \r\n\r\nY si escuch\xE1s pasos detr\xE1s tuyo...  \r\nNo mires
+    inmediatamente."

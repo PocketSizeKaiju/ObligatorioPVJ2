@@ -5,12 +5,14 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private FieldOfView fieldOfView;
+    [SerializeField] private Animator animator;
     public GameObject _light;
     public Vector2 LastNonZeroDirection => _lastNonZeroDirection;
 
     private float Speed => Settings.Instance.PlayerSpeed;
 
     private Vector2 _lastNonZeroDirection;
+    private InteractableNPC _nearbyNpc;
     private Rigidbody2D _rigidBody;
 
     private Vector2 _movement;
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         fieldOfView.SetOrigin(transform.position);
         UpdateKeyboardInput();
         RotateLight();
+        HandleInteraction();
     }
 
     private void FixedUpdate()
@@ -44,6 +47,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (_movement != Vector2.zero)
             _lastNonZeroDirection = _movement;
+
+        animator.SetBool("forwardWalk", _movement.y > 0);
+        animator.SetBool("backWalk", _movement.y < 0);
+        animator.SetBool("rightWalk", _movement.x > 0);
+        animator.SetBool("leftWalk", _movement.x < 0);
+    }
+
+    private void HandleInteraction()
+    {
+        if (Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            _nearbyNpc?.Interact();
+        }
     }
 
     private float _SanityFlag = 0f;
@@ -87,9 +103,29 @@ public class PlayerMovement : MonoBehaviour
         int maxLife = Settings.Instance.PlayerMaxLife;
 
         float lifePercent = (float)currentLife / maxLife;
-        float insanity = 1f - lifePercent;
-        float maxAngle = 180f;
+        float insanity = (lifePercent < 0.8) ? 1f - lifePercent : 0f;
+        float maxAngle = 160f;
 
         return insanity * maxAngle;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        InteractableNPC npc = other.GetComponent<InteractableNPC>();
+
+        if (npc != null)
+        {
+            _nearbyNpc = npc;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        InteractableNPC npc = other.GetComponent<InteractableNPC>();
+
+        if (npc != null && npc == _nearbyNpc)
+        {
+            _nearbyNpc = null;
+        }
     }
 }
