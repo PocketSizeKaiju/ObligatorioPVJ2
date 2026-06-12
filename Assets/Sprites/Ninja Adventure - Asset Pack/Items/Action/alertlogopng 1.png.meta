@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7dbcbd16eeb6b4c938ed00e557c34dbf
+guid: 32befef42a0f548b9968b873f662949e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2004740254351426595
-    second: alertlogopng_0
+      213: 4150226928210519771
+    second: alertlogopng 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,80 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alertlogopng_0
+      name: alertlogopng 1_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 40
+        x: 52
+        y: 41
         width: 92
-        height: 116
+        height: 115
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -14.5, y: 58.5}
-        - {x: -35.5, y: -32.5}
-        - {x: -46.5, y: 44.5}
-        - {x: -46.5, y: 34.5}
-        - {x: -35.5, y: -50.5}
-        - {x: -16.5, y: -58.5}
-        - {x: 71.5, y: -58.5}
-        - {x: 72.5, y: -52.5}
-        - {x: 72.5, y: 58.5}
-      - - {x: -43.5, y: -2.5}
-        - {x: -43.5, y: 0.5}
-        - {x: -46.5, y: 1.5}
-        - {x: -48.5, y: -0.5}
-        - {x: -46.5, y: -3.5}
-      - - {x: -42.5, y: -31.5}
-        - {x: -42.5, y: -23.5}
-        - {x: -44.5, y: -21.5}
-        - {x: -48.5, y: -20.5}
-        - {x: -50.5, y: -22.5}
-        - {x: -50.5, y: -30.5}
-        - {x: -47.5, y: -32.5}
-        - {x: -44.5, y: -32.5}
-      - - {x: -68.5, y: -39.5}
-        - {x: -68.5, y: -32.5}
-        - {x: -71.5, y: -29.5}
-        - {x: -72.5, y: -29.5}
-        - {x: -72.5, y: -41.5}
-        - {x: -70.5, y: -41.5}
-      - - {x: -41.5, y: -39.5}
-        - {x: -41.5, y: -34.5}
-        - {x: -43.5, y: -32.5}
-        - {x: -46.5, y: -33.5}
-        - {x: -46.5, y: -38.5}
-        - {x: -44.5, y: -40.5}
-      - - {x: -41.5, y: -44.5}
-        - {x: -41.5, y: -41.5}
-        - {x: -44.5, y: -40.5}
-        - {x: -46.5, y: -42.5}
-        - {x: -44.5, y: -45.5}
-      - - {x: -45.5, y: -48.5}
-        - {x: -45.5, y: -45.5}
-        - {x: -48.5, y: -44.5}
-        - {x: -50.5, y: -46.5}
-        - {x: -48.5, y: -49.5}
-      - - {x: -49.5, y: -52.5}
-        - {x: -49.5, y: -49.5}
-        - {x: -52.5, y: -48.5}
-        - {x: -54.5, y: -50.5}
-        - {x: -52.5, y: -53.5}
-      - - {x: -28.5, y: -55.5}
-        - {x: -33.5, y: -55.5}
-        - {x: -34.5, y: -58.5}
-        - {x: -27.5, y: -58.5}
-      - - {x: -32.5, y: -52.5}
-        - {x: -28.5, y: -52.5}
-        - {x: -32.5, y: -23.5}
-        - {x: -32.5, y: -45.5}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ddbf4783c5bbd24e0800000000000000
-      internalID: -2004740254351426595
+      spriteID: bd6af310761989930800000000000000
+      internalID: 4150226928210519771
       vertices: []
       indices: 
       edges: []
@@ -182,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c54ec6291fea54e22a7e51cffa4f325a
+    spriteID: 47f2fe38c0bb44e319b083df53a64157
     internalID: 0
     vertices: []
     indices: 
@@ -190,9 +133,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      alertlogopng_0: -2004740254351426595
+      alertlogopng 1_0: 4150226928210519771
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
