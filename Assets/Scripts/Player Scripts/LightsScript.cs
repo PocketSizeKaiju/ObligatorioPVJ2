@@ -8,6 +8,11 @@ public class LightsScript : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.IsGameplayBlocked)
+        {
+            return;
+        }
+        
         GetComponent<BoxCollider2D>().enabled = Keyboard.current.ctrlKey.IsPressed();
         GetComponent<Renderer>().enabled = Keyboard.current.ctrlKey.IsPressed();
 
