@@ -23,8 +23,6 @@ public class GameOverManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("GameOverManager Update funcionando");
-
         if (_isGameOver)
         {
             return;
@@ -37,7 +35,6 @@ public class GameOverManager : MonoBehaviour
 
         if (Settings.Instance.PlayerLife <= 0)
         {
-            Debug.Log("Game Over detectado");
             ShowGameOver();
         }
     }
@@ -53,6 +50,7 @@ public class GameOverManager : MonoBehaviour
 
     public void Retry()
     {
+        Debug.Log("clicked Retry");
         GameState.IsGameOver = false;
         GameState.IsPaused = false;
         Time.timeScale = 1f;
@@ -61,6 +59,7 @@ public class GameOverManager : MonoBehaviour
 
     public void GoToMenu()
     {
+        Debug.Log("clicked GoToMenu");
         GameState.IsGameOver = false;
         GameState.IsPaused = false;
         Time.timeScale = 1f;
