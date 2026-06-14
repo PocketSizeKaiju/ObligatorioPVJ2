@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel;
-    [SerializeField] private string menuSceneName = "Menu";
+    [SerializeField] private string menuSceneName = "InitialScene";
     [SerializeField] private string currentSceneName = "SandBox";
 
     private bool _isGameOver;
@@ -17,7 +17,7 @@ public class GameOverManager : MonoBehaviour
 
         Settings.Instance.PlayerLife = Settings.Instance.PlayerMaxLife;
 
-        gameOverPanel.SetActive(false);
+        if (gameOverPanel) gameOverPanel?.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -60,6 +60,7 @@ public class GameOverManager : MonoBehaviour
     public void GoToMenu()
     {
         Debug.Log("clicked GoToMenu");
+        Debug.Log(menuSceneName);
         GameState.IsGameOver = false;
         GameState.IsPaused = false;
         Time.timeScale = 1f;
