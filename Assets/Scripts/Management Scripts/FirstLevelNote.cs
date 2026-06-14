@@ -8,6 +8,7 @@ public class FirstLevelNote : MonoBehaviour
     [TextArea(5, 20)]
     public string text;
     public bool showNoteMsg = true;
+    public int witnessesInLevel = 1;
 
     void Start()
     {
@@ -18,5 +19,10 @@ public class FirstLevelNote : MonoBehaviour
             noteManager.GetComponent<CluePopup>().ShowNote();
             showNoteMsg = false;
         }
+        else
+        {
+            noteManager.GetComponent<CluePopup>().HideNote();
+        }
+        Settings.Instance.survivoursOnScenes += witnessesInLevel;
     }
 }
