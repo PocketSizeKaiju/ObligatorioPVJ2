@@ -63,6 +63,8 @@ public class GameOverManager : MonoBehaviour
         GameState.IsGameOver = false;
         GameState.IsPaused = false;
         Time.timeScale = 1f;
+        Settings.Instance.survivoursOnScenes = 0;
+        Settings.Instance.SurvivoursLeft = 0;
         SceneManager.LoadScene(menuSceneName);
     }
 }

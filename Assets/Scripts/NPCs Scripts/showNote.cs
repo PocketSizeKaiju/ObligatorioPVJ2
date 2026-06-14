@@ -5,6 +5,7 @@ public class showNote : MonoBehaviour
 {
     public TMP_Text noteText;
     public GameObject noteManager;
+    [TextArea(5, 20)]
     public string text;
 
     private bool pickedUp;

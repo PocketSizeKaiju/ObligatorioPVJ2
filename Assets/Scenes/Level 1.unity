@@ -19391,9 +19391,7 @@ PrefabInstance:
         \nSi la bater\xEDa se agota, se acab\xF3.  \nHabl\xE1 con quienes encuentres.
         \nObserv\xE1 c\xF3mo act\xFAan. \nHay cosas aqu\xED que intentan parecer
         humanas, pero siempre cometen errores.  Dejar\xE9 m\xE1s notas para ayudarte. 
-        \n\nWASD: Moverse \nCtrl: Linterna \nE: Interactuar \nP: Pausa  \n\nEncontr\xE1
-        sobrevivientes. \nConserv\xE1 la bater\xEDa.  \n\nY si escuch\xE1s pasos
-        detr\xE1s tuyo...  \nNo mires inmediatamente."
+        \n\nWASD/Flechas: Moverse \nCtrl: Linterna \nE: Interactuar \nP: Pausa  "
       objectReference: {fileID: 0}
     - target: {fileID: 2876994341039843212, guid: f4107441329a2174da2d4ec4e8e79f10, type: 3}
       propertyPath: noteText
