@@ -7,8 +7,10 @@ public class PlayGame : MonoBehaviour // Corregido el detalle en el nombre de la
     // Start is called before the first frame update
     void Start()
     {
-        // Si quieres que cargue apenas empiece el juego, descomenta la siguiente línea:
-        // CargarSandBox();
+        Settings.Instance.PlayerLife = Settings.Instance.PlayerMaxLife;
+
+        Settings.Instance.survivoursOnScenes = 0;
+        Settings.Instance.SurvivoursLeft = 0;
     }
 
     // Update is called once per frame
