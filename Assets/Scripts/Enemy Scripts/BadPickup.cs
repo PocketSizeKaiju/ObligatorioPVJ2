@@ -29,6 +29,6 @@ public class BadPickup : MonoBehaviour
 
     private void DeathAction()
     {
-        gameObject.GetComponent<Renderer>().material.color = Color.red;
+        Destroy(gameObject);
     }
 }

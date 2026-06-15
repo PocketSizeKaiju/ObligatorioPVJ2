@@ -3,6 +3,7 @@ using System.Collections;
 
 public class RandomPatrol : MonoBehaviour
 {
+
     [Header("RandomPatrol parameters")]
     public float speed;
     public float minPatrolTime;
@@ -13,6 +14,9 @@ public class RandomPatrol : MonoBehaviour
     public float chaseRange = 3f;
     private Transform target;
     private bool isChasing = false;
+
+    [Header("Alert")]
+    [SerializeField] private GameObject alertIcon;
 
     private Rigidbody2D rb;
 
@@ -42,6 +46,8 @@ public class RandomPatrol : MonoBehaviour
             if (!isChasing)
             {
                 isChasing = true;
+                if (alertIcon != null)
+        alertIcon.SetActive(true);
                 if (patrolCoroutine != null) StopCoroutine(patrolCoroutine); 
             }
 
@@ -54,6 +60,8 @@ public class RandomPatrol : MonoBehaviour
             if (isChasing)
             {
                 isChasing = false;
+                if (alertIcon != null)
+        alertIcon.SetActive(false);
                 patrolCoroutine = StartCoroutine(Patrol());
             }
         }
