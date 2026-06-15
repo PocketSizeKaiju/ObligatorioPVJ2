@@ -15,5 +15,5 @@ MonoBehaviour:
   PlayerLife: 10
   PlayerMaxLife: 10
   PlayerSpeed: 6
-  SurvivoursLeft: 0
-  survivoursOnScenes: 5
+  SurvivoursLeft: 3
+  survivoursOnScenes: 15

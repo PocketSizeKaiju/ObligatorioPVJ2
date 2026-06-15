@@ -1418,6 +1418,7 @@ GameObject:
   - component: {fileID: 1169880303}
   - component: {fileID: 1169880302}
   - component: {fileID: 1169880301}
+  - component: {fileID: 1169880305}
   m_Layer: 0
   m_Name: CinemachineBrain
   m_TagString: Untagged
@@ -1478,8 +1479,8 @@ Camera:
   m_GameObject: {fileID: 1169880300}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.060341742, g: 0.11320752, b: 0.08618226, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1569,6 +1570,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1169880305
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169880300}
+  m_Enabled: 1
 --- !u!1 &1262612184
 GameObject:
   m_ObjectHideFlags: 0
@@ -14962,6 +14971,18 @@ PrefabInstance:
       propertyPath: movingDialogueText
       value: "Solo un poco m\xE1s"
       objectReference: {fileID: 0}
+    - target: {fileID: 8910447257023026758, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 792188147}
+    - target: {fileID: 8910447257023026758, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
+      propertyPath: 'waypoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 725083077}
+    - target: {fileID: 8910447257023026758, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
+      propertyPath: 'waypoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 208438207}
     - target: {fileID: 9047168378608701349, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.62

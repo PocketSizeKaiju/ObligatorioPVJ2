@@ -21,6 +21,6 @@ public class PlayGame : MonoBehaviour // Corregido el detalle en el nombre de la
     public void CargarSandBox()
     {
         // 3. Esta es la línea clave que carga la escena por su nombre
-        SceneManager.LoadScene("SandBox");
+        SceneManager.LoadScene("Level 1");
     }
 }
