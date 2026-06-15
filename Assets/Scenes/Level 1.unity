@@ -14951,6 +14951,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5026185845167568717, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
+      propertyPath: isEnemy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6113492825369308381, guid: e90ff5aabd926ca4393bb474241e13cf, type: 3}
       propertyPath: isNotEnemy
       value: 1
