@@ -27,6 +27,7 @@ public class GameOverManager : MonoBehaviour
         {
             return;
         }
+        Debug.Log("_isGameOver" + _isGameOver);
 
         if (Keyboard.current.oKey.wasPressedThisFrame)
         {
@@ -41,11 +42,14 @@ public class GameOverManager : MonoBehaviour
 
     private void ShowGameOver()
     {
+
         _isGameOver = true;
         GameState.IsGameOver = true;
+        Debug.Log("GameState.IsGameOver" + GameState.IsGameOver);
 
         gameOverPanel.SetActive(true);
         Time.timeScale = 0f;
+        Debug.Log("gameOverPanel" + gameOverPanel);
     }
 
     public void Retry()

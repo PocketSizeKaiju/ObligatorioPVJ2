@@ -7,10 +7,6 @@ public class PlayGame : MonoBehaviour // Corregido el detalle en el nombre de la
     // Start is called before the first frame update
     void Start()
     {
-        Settings.Instance.PlayerLife = Settings.Instance.PlayerMaxLife;
-
-        Settings.Instance.survivoursOnScenes = 0;
-        Settings.Instance.SurvivoursLeft = 0;
     }
 
     // Update is called once per frame
