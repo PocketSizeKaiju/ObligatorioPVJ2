@@ -19552,13 +19552,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2876994341039843212, guid: f4107441329a2174da2d4ec4e8e79f10, type: 3}
       propertyPath: text
-      value: "SI EST\xC1S LEYENDO ESTO, TODAV\xCDA NO ES TARDE.  \n\n\nLas personas
-        no siempre son personas. \nTu linterna es lo \xFAnico que te mantiene con
-        vida. La luz ilumina el camino, protege tu mente y aleja a las entidades. 
-        \nSi la bater\xEDa se agota, se acab\xF3.  \nHabl\xE1 con quienes encuentres.
-        \nObserv\xE1 c\xF3mo act\xFAan. \nHay cosas aqu\xED que intentan parecer
-        humanas, pero siempre cometen errores.  Dejar\xE9 m\xE1s notas para ayudarte. 
-        \n\nWASD/Flechas: Moverse \nCtrl: Linterna \nE: Interactuar \nP: Pausa  "
+      value: "SI EST\xC1S LEYENDO ESTO, TODAV\xCDA NO ES TARDE.\n\nLas personas no
+        siempre son personas.\n\nTu linterna es lo \xFAnico que te mantiene con vida.
+        La luz ilumina el camino, mantiene tu cordura y puede alejar a las entidades
+        que muestran su verdadera forma.\n\nSi dudas de alguien, ilumin\xE1lo. Los
+        sobrevivientes no tienen nada que ocultar. Los impostores s\xED.\n\nHabl\xE1
+        con quienes encuentres. Observ\xE1 c\xF3mo act\xFAan. Hay cosas aqu\xED que
+        intentan parecer humanas, pero siempre cometen errores.\nRescat\xE1 a los
+        sobrevivientes. Algunos podr\xE1n ayudarte a seguir adelante.\n\nDejar\xE9
+        m\xE1s notas por el laberinto. Aprend\xE9 las se\xF1ales. Reconocer a un
+        impostor puede salvarte la vida.\n\nY prest\xE1 atenci\xF3n a tu luz: cuanto
+        m\xE1s tiemble, m\xE1s cerca estar\xE1s de perder la cordura.\n\nWASD/Flechas:
+        Moverse \nCtrl: Linterna \nE: Interactuar \nP: Pausa  "
       objectReference: {fileID: 0}
     - target: {fileID: 2876994341039843212, guid: f4107441329a2174da2d4ec4e8e79f10, type: 3}
       propertyPath: noteText
