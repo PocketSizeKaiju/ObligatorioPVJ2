@@ -1185,6 +1185,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4373674560102738598, guid: db9ee10a209df1840bf09c416741e504, type: 3}
+      propertyPath: IsSurvivour
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6177959913647570848, guid: db9ee10a209df1840bf09c416741e504, type: 3}
       propertyPath: m_Name
       value: GoodPickup
