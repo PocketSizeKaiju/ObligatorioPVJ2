@@ -15275,7 +15275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 308.0312, y: 54.483704}
+  m_AnchoredPosition: {x: 308.03125, y: 54.483643}
   m_SizeDelta: {x: 588.0514, y: 98.9674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1437160532
@@ -18314,6 +18314,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4978053240978300255, guid: 759d7fcbdbb19a84dafa3c126d99b278, type: 3}
+      propertyPath: bloodPrefab
+      value: 
+      objectReference: {fileID: 6852732774096468277, guid: 32f88f8590a634b7fad4f16cb92e660f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
