@@ -74,12 +74,12 @@ public class AttackPlayer : MonoBehaviour
             {
                 
                 GameObject blood = Instantiate(
-    bloodPrefab,
-    player.position,
-    Quaternion.identity
-);
+                bloodPrefab,
+                player.position,
+                Quaternion.identity
+                );
 
-Destroy(blood, 0.5f);
+                Destroy(blood, 3f);
             }
         }
 
