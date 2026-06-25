@@ -291,7 +291,7 @@ MonoBehaviour:
   attackPreparationTime: 0.5
   attackCooldown: 1
   damage: 1
-  bloodPrefab: {fileID: 0}
+  bloodPrefab: {fileID: 6852732774096468277, guid: 32f88f8590a634b7fad4f16cb92e660f, type: 3}
 --- !u!95 &974715059670563711
 Animator:
   serializedVersion: 7

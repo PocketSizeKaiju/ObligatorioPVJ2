@@ -2972,6 +2972,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a825453b2c932244b9ae464f17aad3d7, type: 3}
+--- !u!114 &900774982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1946306993505752688, guid: a825453b2c932244b9ae464f17aad3d7, type: 3}
+  m_PrefabInstance: {fileID: 900774981}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40a3cc10947eca4ba55815bec67bfc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverManager
 --- !u!1 &970542650
 GameObject:
   m_ObjectHideFlags: 0
@@ -53295,6 +53306,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2909648923001602337, guid: f7aa3f70610f7d841891c713d0208de0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 900774982}
+    - target: {fileID: 2909648923001602337, guid: f7aa3f70610f7d841891c713d0208de0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 6470606362210411492, guid: f7aa3f70610f7d841891c713d0208de0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -53310,6 +53329,14 @@ PrefabInstance:
     - target: {fileID: 6470606362210411492, guid: f7aa3f70610f7d841891c713d0208de0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322512486620524983, guid: f7aa3f70610f7d841891c713d0208de0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 900774982}
+    - target: {fileID: 7322512486620524983, guid: f7aa3f70610f7d841891c713d0208de0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Retry
       objectReference: {fileID: 0}
     - target: {fileID: 7665640182864984135, guid: f7aa3f70610f7d841891c713d0208de0, type: 3}
       propertyPath: m_Pivot.x

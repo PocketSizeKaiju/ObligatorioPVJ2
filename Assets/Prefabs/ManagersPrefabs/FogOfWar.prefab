@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FieldOfView
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1537
 --- !u!33 &2925856107166611089
 MeshFilter:
   m_ObjectHideFlags: 0
