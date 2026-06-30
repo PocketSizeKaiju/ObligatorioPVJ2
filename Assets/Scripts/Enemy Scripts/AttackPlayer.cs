@@ -12,9 +12,16 @@ public class AttackPlayer : MonoBehaviour
     [Header("Effects")]
     [SerializeField] private GameObject bloodPrefab;
 
+    [Header("Sonido de ataque")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private float attackSoundDuration = 1f;
+
     private Transform player;
     private SpriteRenderer spriteRenderer;
     private bool isAttacking;
+
+    private Coroutine attackSoundCoroutine;
 
     private void Start()
     {
@@ -26,6 +33,11 @@ public class AttackPlayer : MonoBehaviour
         }
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     private void Update()
@@ -70,13 +82,14 @@ public class AttackPlayer : MonoBehaviour
                 Settings.Instance.PlayerLife = 0;
             }
 
+            PlayAttackSound();
+
             if (bloodPrefab != null)
             {
-                
                 GameObject blood = Instantiate(
-                bloodPrefab,
-                player.position,
-                Quaternion.identity
+                    bloodPrefab,
+                    player.position,
+                    Quaternion.identity
                 );
 
                 Destroy(blood, 3f);
@@ -86,6 +99,33 @@ public class AttackPlayer : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
 
         isAttacking = false;
+    }
+
+    private void PlayAttackSound()
+    {
+        if (audioSource == null || attackSound == null)
+            return;
+
+        if (attackSoundCoroutine != null)
+        {
+            StopCoroutine(attackSoundCoroutine);
+        }
+
+        attackSoundCoroutine = StartCoroutine(AttackSoundCoroutine());
+    }
+
+    private IEnumerator AttackSoundCoroutine()
+    {
+        audioSource.clip = attackSound;
+        audioSource.loop = false;
+        audioSource.Play();
+
+        yield return new WaitForSeconds(attackSoundDuration);
+
+        if (audioSource.clip == attackSound)
+        {
+            audioSource.Stop();
+        }
     }
 
     private void OnDrawGizmosSelected()

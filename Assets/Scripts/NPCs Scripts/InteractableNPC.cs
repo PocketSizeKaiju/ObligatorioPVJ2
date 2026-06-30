@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class InteractableNPC : MonoBehaviour
 {
@@ -9,14 +10,26 @@ public class InteractableNPC : MonoBehaviour
 
     [SerializeField] private bool isNotEnemy;
 
+    [Header("Sonido de diálogo")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip dialogueSound;
+    [SerializeField] private float dialogueSoundDuration = 3f;
+
     private DialogueShower _dialogueShower;
     private PassiveEnemyMovement _movement;
     private bool _hasStartedMoving;
+
+    private Coroutine _dialogueSoundCoroutine;
 
     private void Awake()
     {
         _dialogueShower = FindFirstObjectByType<DialogueShower>();
         _movement = GetComponent<PassiveEnemyMovement>();
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     public void Interact()
@@ -45,6 +58,31 @@ public class InteractableNPC : MonoBehaviour
         {
             _dialogueShower.ShowDialogue(text);
         }
+        PlayDialogueSound();
+    }
+    private void PlayDialogueSound()
+    {
+        if (audioSource == null || dialogueSound == null)
+            return;
+
+        if (_dialogueSoundCoroutine != null)
+        {
+            StopCoroutine(_dialogueSoundCoroutine);
+        }
+
+        _dialogueSoundCoroutine = StartCoroutine(DialogueSoundCoroutine());
+    }
+
+    private IEnumerator DialogueSoundCoroutine()
+    {
+        audioSource.clip = dialogueSound;
+        audioSource.loop = true;
+        audioSource.Play();
+
+        yield return new WaitForSeconds(dialogueSoundDuration);
+
+        audioSource.Stop();
+        audioSource.loop = false;
     }
 
     private void TransformIntoActiveEnemy()
