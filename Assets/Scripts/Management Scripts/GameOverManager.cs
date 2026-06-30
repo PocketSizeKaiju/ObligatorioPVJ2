@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -8,7 +9,21 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] private string menuSceneName = "InitialScene";
     [SerializeField] private string currentSceneName = "SandBox";
 
+    [Header("Sonido de Game Over")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip gameOverSound;
+    [SerializeField] private float gameOverSoundDuration = 3f;
+
     private bool _isGameOver;
+    private Coroutine _gameOverSoundCoroutine;
+
+    private void Awake()
+    {
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+    }
 
     private void Start()
     {
@@ -27,6 +42,7 @@ public class GameOverManager : MonoBehaviour
         {
             return;
         }
+
         Debug.Log("_isGameOver" + _isGameOver);
 
         if (Keyboard.current.oKey.wasPressedThisFrame)
@@ -42,14 +58,43 @@ public class GameOverManager : MonoBehaviour
 
     private void ShowGameOver()
     {
-
         _isGameOver = true;
         GameState.IsGameOver = true;
         Debug.Log("GameState.IsGameOver" + GameState.IsGameOver);
 
         gameOverPanel.SetActive(true);
+
+        PlayGameOverSound();
+
         Time.timeScale = 0f;
         Debug.Log("gameOverPanel" + gameOverPanel);
+    }
+
+    private void PlayGameOverSound()
+    {
+        if (audioSource == null || gameOverSound == null)
+            return;
+
+        if (_gameOverSoundCoroutine != null)
+        {
+            StopCoroutine(_gameOverSoundCoroutine);
+        }
+
+        _gameOverSoundCoroutine = StartCoroutine(GameOverSoundCoroutine());
+    }
+
+    private IEnumerator GameOverSoundCoroutine()
+    {
+        audioSource.clip = gameOverSound;
+        audioSource.loop = false;
+        audioSource.Play();
+
+        yield return new WaitForSecondsRealtime(gameOverSoundDuration);
+
+        if (audioSource.clip == gameOverSound)
+        {
+            audioSource.Stop();
+        }
     }
 
     public void Retry()
